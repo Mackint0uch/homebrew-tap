@@ -1,5 +1,5 @@
 class Claulock < Formula
-  desc "Local-first secrets manager for AI coding agents — use secrets without revealing them"
+  desc "Local-first secrets manager for AI coding agents"
   homepage "https://claulock.com"
   version "0.1.0"
   license any_of: ["MIT", "Apache-2.0"]
@@ -14,22 +14,22 @@ class Claulock < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/Mackint0uch/ClauLock/releases/download/v0.1.0/claulock-v0.1.0-macos-arm64.tar.gz"
+      url "https://github.com/Mackint0uch/claulock-releases/releases/download/v0.1.0/claulock-v0.1.0-macos-arm64.tar.gz"
       sha256 "cb0f817b5b10a56b79a91619969fdc8289e3d8e3d1c667df821c9b82abb18a28"
     end
     on_intel do
-      url "https://github.com/Mackint0uch/ClauLock/releases/download/v0.1.0/claulock-v0.1.0-macos-x86_64.tar.gz"
+      url "https://github.com/Mackint0uch/claulock-releases/releases/download/v0.1.0/claulock-v0.1.0-macos-x86_64.tar.gz"
       sha256 "e7dc4169cc0a5ec95e78b8699793f10e17b914470303985d33a4b8801f68f832"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/Mackint0uch/ClauLock/releases/download/v0.1.0/claulock-v0.1.0-linux-arm64.tar.gz"
+      url "https://github.com/Mackint0uch/claulock-releases/releases/download/v0.1.0/claulock-v0.1.0-linux-arm64.tar.gz"
       sha256 "2bb9caeeffa8a2ed90e951965feae1b1127d089043075715f042848ff258349e"
     end
     on_intel do
-      url "https://github.com/Mackint0uch/ClauLock/releases/download/v0.1.0/claulock-v0.1.0-linux-x86_64.tar.gz"
+      url "https://github.com/Mackint0uch/claulock-releases/releases/download/v0.1.0/claulock-v0.1.0-linux-x86_64.tar.gz"
       sha256 "6cc44c51329037adb1b10596c77f02eb59a849e8565a5306b196159b61b6ed86"
     end
   end
@@ -64,7 +64,7 @@ class Claulock < Formula
         brew services start claulock
 
       Docs:  https://claulock.com/docs
-      Issues: https://github.com/Mackint0uch/ClauLock/issues
+      Issues: https://github.com/Mackint0uch/claulock-releases/issues
     EOS
   end
 
