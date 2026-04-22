@@ -6,7 +6,7 @@ class Claulock < Formula
 
   # This file is the source-of-truth template. `packaging/homebrew/update-formula.sh`
   # rewrites the `version`, `url`, and `sha256` fields at release time and opens a
-  # pull request in the tap repository (claulock/homebrew-tap).
+  # pull request in the tap repository (Mackint0uch/homebrew-tap).
   #
   # Until the first tag exists, the url/sha256 values below are placeholders and
   # will 404 if anyone tries `brew install`. That's intentional: it keeps the
@@ -64,7 +64,7 @@ class Claulock < Formula
         brew services start claulock
 
       Docs:  https://claulock.com/docs
-      Issues: https://github.com/claulock/claulock/issues
+      Issues: https://github.com/Mackint0uch/ClauLock/issues
     EOS
   end
 
