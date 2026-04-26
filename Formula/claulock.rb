@@ -39,7 +39,13 @@ class Claulock < Formula
   end
 
   def install
-    bin.install "clsec", "clsecd", "clsec-mcp", "clsec-exec"
+    # clsec-scrub is required by `clsec install` and the PostToolUse hook;
+    # v0.1.0 tarballs are MISSING it (bug — patched in v0.1.1+). The line
+    # below uses File.exist? to install whatever the tarball actually ships
+    # without breaking on legacy v0.1.0 tarballs that lack clsec-scrub.
+    %w[clsec clsecd clsec-mcp clsec-exec clsec-scrub].each do |b|
+      bin.install b if File.exist?(b)
+    end
     doc.install "README.md" if File.exist?("README.md")
     # The v0.1.0 tarballs ship with LICENSE-MIT (legacy from pre-restructure).
     # Newer releases will ship LICENSE-APACHE + LICENSE-BSL + NOTICE per the
@@ -48,6 +54,7 @@ class Claulock < Formula
       (pkgshare/"licenses").install f if File.exist?(f)
     end
   end
+
 
   service do
     run [opt_bin/"clsecd"]
