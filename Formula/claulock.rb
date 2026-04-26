@@ -2,7 +2,11 @@ class Claulock < Formula
   desc "Local-first secrets manager for AI coding agents"
   homepage "https://claulock.com"
   version "0.1.0"
-  license any_of: ["MIT", "Apache-2.0"]
+  # Tri-layer licensing per upstream NOTICE: Apache-2.0 covers crypto +
+  # hooks + leak_test; BUSL-1.1 covers product code (CLI, daemon, exec,
+  # scrubber, keystore, MCP, IPC, UI, site, packaging). BUSL converts to
+  # Apache-2.0 on 2030-05-01.
+  license any_of: ["Apache-2.0", "BUSL-1.1"]
 
   # This file is the source-of-truth template. `packaging/homebrew/update-formula.sh`
   # rewrites the `version`, `url`, and `sha256` fields at release time and opens a
@@ -37,7 +41,10 @@ class Claulock < Formula
   def install
     bin.install "clsec", "clsecd", "clsec-mcp", "clsec-exec"
     doc.install "README.md" if File.exist?("README.md")
-    %w[LICENSE-MIT LICENSE-APACHE].each do |f|
+    # The v0.1.0 tarballs ship with LICENSE-MIT (legacy from pre-restructure).
+    # Newer releases will ship LICENSE-APACHE + LICENSE-BSL + NOTICE per the
+    # tri-layer split. Install whatever is present.
+    %w[LICENSE-MIT LICENSE-APACHE LICENSE-BSL NOTICE].each do |f|
       (pkgshare/"licenses").install f if File.exist?(f)
     end
   end
