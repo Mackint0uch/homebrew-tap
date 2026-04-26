@@ -1,11 +1,11 @@
 class Claulock < Formula
   desc "Local-first secrets manager for AI coding agents"
   homepage "https://claulock.com"
-  version "0.1.0"
-  # Tri-layer licensing per upstream NOTICE: Apache-2.0 covers crypto +
-  # hooks + leak_test; BUSL-1.1 covers product code (CLI, daemon, exec,
-  # scrubber, keystore, MCP, IPC, UI, site, packaging). BUSL converts to
-  # Apache-2.0 on 2030-05-01.
+  version "0.1.1"
+  # Tri-layer licensing per upstream NOTICE: Apache-2.0 covers crypto + hooks
+  # + leak_test; BUSL-1.1 covers product code (CLI, daemon, exec, scrubber,
+  # keystore, MCP, IPC, UI, site, packaging). BUSL converts to Apache-2.0
+  # on 2030-05-01.
   license any_of: ["Apache-2.0", "BUSL-1.1"]
 
   # This file is the source-of-truth template. `packaging/homebrew/update-formula.sh`
@@ -18,23 +18,23 @@ class Claulock < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/Mackint0uch/claulock-releases/releases/download/v0.1.0/claulock-v0.1.0-macos-arm64.tar.gz"
-      sha256 "cb0f817b5b10a56b79a91619969fdc8289e3d8e3d1c667df821c9b82abb18a28"
+      url "https://github.com/Mackint0uch/claulock-releases/releases/download/v0.1.1/claulock-v0.1.1-macos-arm64.tar.gz"
+      sha256 "8aa04fca4cfb65054562a225bba37b8e4c2170b97094ebb201b57523f0804e8a"
     end
     on_intel do
-      url "https://github.com/Mackint0uch/claulock-releases/releases/download/v0.1.0/claulock-v0.1.0-macos-x86_64.tar.gz"
-      sha256 "e7dc4169cc0a5ec95e78b8699793f10e17b914470303985d33a4b8801f68f832"
+      url "https://github.com/Mackint0uch/claulock-releases/releases/download/v0.1.1/claulock-v0.1.1-macos-x86_64.tar.gz"
+      sha256 "2017b297c5bda42e26bb0a1937979c0df55799db87ae0a89e72e6da9ff3f16df"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/Mackint0uch/claulock-releases/releases/download/v0.1.0/claulock-v0.1.0-linux-arm64.tar.gz"
-      sha256 "2bb9caeeffa8a2ed90e951965feae1b1127d089043075715f042848ff258349e"
+      url "https://github.com/Mackint0uch/claulock-releases/releases/download/v0.1.1/claulock-v0.1.1-linux-arm64.tar.gz"
+      sha256 "3eb90a7271f6f9c6afa39e0e67d52d8616c845a18574ecd6f026886ab08889dc"
     end
     on_intel do
-      url "https://github.com/Mackint0uch/claulock-releases/releases/download/v0.1.0/claulock-v0.1.0-linux-x86_64.tar.gz"
-      sha256 "6cc44c51329037adb1b10596c77f02eb59a849e8565a5306b196159b61b6ed86"
+      url "https://github.com/Mackint0uch/claulock-releases/releases/download/v0.1.1/claulock-v0.1.1-linux-x86_64.tar.gz"
+      sha256 "a6773588c2d7a4a5a0a6dd24b8523d2a5b30cac16bfcd115b10a23d46298e424"
     end
   end
 
@@ -47,14 +47,13 @@ class Claulock < Formula
       bin.install b if File.exist?(b)
     end
     doc.install "README.md" if File.exist?("README.md")
-    # The v0.1.0 tarballs ship with LICENSE-MIT (legacy from pre-restructure).
-    # Newer releases will ship LICENSE-APACHE + LICENSE-BSL + NOTICE per the
-    # tri-layer split. Install whatever is present.
+    # Install whatever license files the tarball ships. v0.1.0 carries the
+    # legacy LICENSE-MIT (predates the v0.1.0 license restructure); newer
+    # releases ship LICENSE-APACHE + LICENSE-BSL + NOTICE.
     %w[LICENSE-MIT LICENSE-APACHE LICENSE-BSL NOTICE].each do |f|
       (pkgshare/"licenses").install f if File.exist?(f)
     end
   end
-
 
   service do
     run [opt_bin/"clsecd"]
