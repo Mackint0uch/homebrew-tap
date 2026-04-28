@@ -15,22 +15,22 @@ class Claulock < Formula
   on_macos do
     on_arm do
       url "https://github.com/Mackint0uch/claulock-releases/releases/download/v0.2.0/claulock-v0.2.0-macos-arm64.tar.gz"
-      sha256 "2e7a66c75d5d15c39bfed7551782db43f0bcda33737b2dda97d965d87bc33cb1"
+      sha256 "69d139353053178c1cdeba23598420f1116f58260f639be914bd107250ee03c3"
     end
     on_intel do
       url "https://github.com/Mackint0uch/claulock-releases/releases/download/v0.2.0/claulock-v0.2.0-macos-x86_64.tar.gz"
-      sha256 "e32015b9903bd1a80684c9393f670ff497b359281db0ca13dc52e7713efa9f8a"
+      sha256 "93ce3d3a602eba6ccb291ab38660a7f81bfaf66f16110a577cfcc01ef7a28974"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/Mackint0uch/claulock-releases/releases/download/v0.2.0/claulock-v0.2.0-linux-arm64.tar.gz"
-      sha256 "06aecf0b0cf8fc094bb6b6645c6868c45cf1de88ed904edfc5b506d16c1ba039"
+      sha256 "5973f62da534ccfbfaa1fd0a42bf17c36bb8eb900cd5ceb2b8a50b17b073ac6f"
     end
     on_intel do
       url "https://github.com/Mackint0uch/claulock-releases/releases/download/v0.2.0/claulock-v0.2.0-linux-x86_64.tar.gz"
-      sha256 "2abc64580101fcced323ff0390d09fe311f535f79d81e8ad5a2eeea5ee5f632c"
+      sha256 "8c6616208d7821078b42aff140e09cc4346f93b7bed15b2040191d75ba1c0611"
     end
   end
 
