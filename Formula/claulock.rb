@@ -15,11 +15,11 @@ class Claulock < Formula
   on_macos do
     on_arm do
       url "https://github.com/Mackint0uch/claulock-releases/releases/download/v0.6.0/claulock-v0.6.0-macos-arm64.tar.gz"
-      sha256 "bbfd83b99329689ee19895ab1e884440ce33fcd3bf224afbb64fcd36b35f13a4"
+      sha256 "86296a493bd37908fb5595dc7f59dc99c466b45b6fb025097d06e1e041e2a3ed"
     end
     on_intel do
       url "https://github.com/Mackint0uch/claulock-releases/releases/download/v0.6.0/claulock-v0.6.0-macos-x86_64.tar.gz"
-      sha256 "bd9813ed5fb672305b38d26409da75319cf1f5f8604b37bff8cf13c46b091e4b"
+      sha256 "db5e11428b334d5ecb83392fcf6b636ab261ac89d27ce03533798a65a9f5366a"
     end
   end
 
