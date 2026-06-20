@@ -1,7 +1,7 @@
 class Claulock < Formula
   desc "Local-first secrets manager for AI coding agents"
   homepage "https://claulock.com"
-  version "0.6.0"
+  version "0.8.0"
   # Tri-layer licensing per upstream NOTICE: Apache-2.0 covers crypto + hooks
   # + leak_test; BUSL-1.1 covers product code (CLI, daemon, exec, scrubber,
   # keystore, MCP, IPC, UI, site, packaging). BUSL converts to Apache-2.0
@@ -11,26 +11,30 @@ class Claulock < Formula
   # This file is the source-of-truth template. `packaging/homebrew/update-formula.sh`
   # rewrites the `version`, `url`, and `sha256` fields at release time and opens a
   # pull request in the tap repository (Mackint0uch/homebrew-tap).
+  #
+  # Until the first tag exists, the url/sha256 values below are placeholders and
+  # will 404 if anyone tries `brew install`. That's intentional: it keeps the
+  # formula committed alongside the code without pretending a release exists.
 
   on_macos do
     on_arm do
-      url "https://github.com/Mackint0uch/claulock-releases/releases/download/v0.6.0/claulock-v0.6.0-macos-arm64.tar.gz"
-      sha256 "86296a493bd37908fb5595dc7f59dc99c466b45b6fb025097d06e1e041e2a3ed"
+      url "https://github.com/Mackint0uch/claulock-releases/releases/download/v0.8.0/claulock-v0.8.0-macos-arm64.tar.gz"
+      sha256 "d2a03373fd85866e64580604d8d19dafdbd6235f2913de701efaec6accf7f922"
     end
     on_intel do
-      url "https://github.com/Mackint0uch/claulock-releases/releases/download/v0.6.0/claulock-v0.6.0-macos-x86_64.tar.gz"
-      sha256 "db5e11428b334d5ecb83392fcf6b636ab261ac89d27ce03533798a65a9f5366a"
+      url "https://github.com/Mackint0uch/claulock-releases/releases/download/v0.8.0/claulock-v0.8.0-macos-x86_64.tar.gz"
+      sha256 "41d12795b5cfc2493106e6ff2f5918e76174fcb978b9d12fb51526276fd9b445"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/Mackint0uch/claulock-releases/releases/download/v0.6.0/claulock-v0.6.0-linux-arm64.tar.gz"
-      sha256 "b57532342a32678b474c8f8c81fb0f956b88b1b2c12efe1e61d2db9c48eec280"
+      url "https://github.com/Mackint0uch/claulock-releases/releases/download/v0.8.0/claulock-v0.8.0-linux-arm64.tar.gz"
+      sha256 "385d08ca06f4ca11facfdc7efc2f9fb430e704add94ab72674fe14995417d40f"
     end
     on_intel do
-      url "https://github.com/Mackint0uch/claulock-releases/releases/download/v0.6.0/claulock-v0.6.0-linux-x86_64.tar.gz"
-      sha256 "915bd743ec6093fc514d53b6f088ee30759ed1bf79a2ec9ddc5ba4362c3b1eb3"
+      url "https://github.com/Mackint0uch/claulock-releases/releases/download/v0.8.0/claulock-v0.8.0-linux-x86_64.tar.gz"
+      sha256 "432bde6b2a93259dde7412e0a8383885ef373686f88fd3f4b0bead5b2abfa91b"
     end
   end
 
@@ -72,12 +76,8 @@ class Claulock < Formula
       Homebrew's service can run the daemon standalone if you prefer:
         brew services start claulock
 
-      v0.2.0 adds optional cross-device sync (E2EE):
-        clsec pair init   # enroll a second device
-        clsec sync now    # one-shot sync
-
       Docs:  https://claulock.com/docs
-      Issues: https://github.com/Mackint0uch/ClauLock/issues
+      Issues: https://github.com/Mackint0uch/claulock-releases/issues
     EOS
   end
 
