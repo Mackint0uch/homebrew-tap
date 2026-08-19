@@ -1,7 +1,7 @@
 class Claulock < Formula
   desc "Local-first secrets manager for AI coding agents"
   homepage "https://claulock.com"
-  version "1.3.2"
+  version "1.4.0"
   # Tri-layer licensing per upstream NOTICE: Apache-2.0 covers crypto + hooks
   # + leak_test; BUSL-1.1 covers product code (CLI, daemon, exec, scrubber,
   # keystore, MCP, IPC, UI, site, packaging). BUSL converts to Apache-2.0
@@ -18,23 +18,23 @@ class Claulock < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/Mackint0uch/claulock-releases/releases/download/v1.3.2/claulock-v1.3.2-macos-arm64.tar.gz"
-      sha256 "19dc6b08d304dfdcea3dc5a5b2c2b6225d2d740862d8b04b8ac6bff4f974d0f9"
+      url "https://github.com/Mackint0uch/claulock-releases/releases/download/v1.4.0/claulock-v1.4.0-macos-arm64.tar.gz"
+      sha256 "fdd1db07630d8a5738b0d4533823f2326fe3dfa4fbe5bbefbdb17119d627b0b2"
     end
     on_intel do
-      url "https://github.com/Mackint0uch/claulock-releases/releases/download/v1.3.2/claulock-v1.3.2-macos-x86_64.tar.gz"
-      sha256 "5e4cabc48bb39c5412a7e0810ea4606ed85d5ae556d17b01414352c24198ecb8"
+      url "https://github.com/Mackint0uch/claulock-releases/releases/download/v1.4.0/claulock-v1.4.0-macos-x86_64.tar.gz"
+      sha256 "a6b323e5a83fad77c1dc7eed4bf54c5c7d3aa5dea89a156b69fe04477bbed7a5"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/Mackint0uch/claulock-releases/releases/download/v1.3.2/claulock-v1.3.2-linux-arm64.tar.gz"
-      sha256 "e5d4d3098702ab10bb9676de60ec04cdbc64aa5e761f92059def374cb9ad5327"
+      url "https://github.com/Mackint0uch/claulock-releases/releases/download/v1.4.0/claulock-v1.4.0-linux-arm64.tar.gz"
+      sha256 "54c35284b428e50741fec74f48811dbe09786169d7cbdf0e2e427973d0a4f5ac"
     end
     on_intel do
-      url "https://github.com/Mackint0uch/claulock-releases/releases/download/v1.3.2/claulock-v1.3.2-linux-x86_64.tar.gz"
-      sha256 "e6c84595589659dec4ae7cfa32e2d720a32f166a3b95ebb3ab27156107815348"
+      url "https://github.com/Mackint0uch/claulock-releases/releases/download/v1.4.0/claulock-v1.4.0-linux-x86_64.tar.gz"
+      sha256 "f8eac1c095c5fd89651132861c52f70d6948eef32c3c1c671fe1bf84c0835ac8"
     end
   end
 
